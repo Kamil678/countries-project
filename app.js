@@ -1,5 +1,16 @@
 const API_URL_ALL = "https://restcountries.com/v3.1/all";
 
+let countries;
+
 fetch(API_URL_ALL)
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((countriesRow) => {
+    countries = countriesRow.map((country) => {
+      return {
+        capital: country.capital && country.capital[0],
+        population: country.population,
+        name: country.name.common,
+        flagUrl: country.flags.png,
+      };
+    });
+  });
