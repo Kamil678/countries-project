@@ -12,6 +12,7 @@ fetch(API_URL_ALL)
         capital: country.capital && country.capital[0],
         population: country.population,
         name: country.name.common,
+        region: country.region,
         flagUrl: country.flags.png,
       };
     });

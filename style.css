@@ -1,3 +1,12 @@
+:root{
+--dark-blue: hsl(209, 23%, 22%);
+--very-dark-blue-background:hsl(207, 26%, 17%);
+--very-dark-blue-text: hsl(200, 15%, 8%);
+--dark-gray: hsl(0, 0%, 52%);
+--very-light-gray:hsl(0, 0%, 98%);
+ --white:hsl(0, 0%, 100%);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +21,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 10px 0px;
     border-bottom: 1px solid #f1ecec;
 }
 
@@ -24,4 +33,20 @@ header button{
     background-color: transparent;
     border: none;
     font-weight: 500;
+}
+
+main, header{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    list-style: none;
+}
+
+li div img{
+   
 }
