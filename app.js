@@ -14,9 +14,8 @@ fetch(API_URL_ALL)
         name: country.name.common,
         region: country.region,
         flagUrl: country.flags.png,
+        flagAlt: country.flags.alt,
       };
     });
     renderCountriesList(countries);
   });
-
-

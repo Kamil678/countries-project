@@ -14,15 +14,22 @@
 }
 
 body{
-    font-family: sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--very-light-gray);
 }
 
 header{
+    background-color: var(--white);
+    border-bottom: 1px solid #f1ecec;
+}
+
+header div{
+    max-width: 1280px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 0px;
-    border-bottom: 1px solid #f1ecec;
+    padding: 20px 30px;
 }
 
 header h1{
@@ -33,20 +40,83 @@ header button{
     background-color: transparent;
     border: none;
     font-weight: 500;
+    cursor: pointer;
+    font-size: 18px;
 }
 
-main, header{
+main{
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 30px;
+    margin-top:30px;
 }
 
 ul{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 70px;
     list-style: none;
 }
 
+ul li{
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -1px 13px 24px 0px rgba(206, 206, 206, 1);
+    overflow: hidden;
+}
+
 li div img{
-   
+   width: 100%;
+   aspect-ratio: 160/98;
+}
+
+li .countries-info{
+    padding: 20px 20px 25px 20px;
+}
+
+li .countries-info h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.info p{
+    font-weight: 600;
+}
+
+.info p, .info span{
+    font-size: 14px;
+}
+
+
+@media only screen and (max-width:1024px) {
+    ul{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    header h1{
+        font-size: 18px;
+    }
+
+    header button{
+        font-size: 14px;
+    }
+
+    ul{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    ul{
+        grid-template-columns: 1fr;
+    }
 }
