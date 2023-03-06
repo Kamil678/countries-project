@@ -3,6 +3,8 @@ import { renderCountriesList } from "./functions-DOM.js";
 const API_URL_ALL = "https://restcountries.com/v3.1/all";
 
 let countries;
+let query = "";
+let region = "";
 
 fetch(API_URL_ALL)
   .then((response) => response.json())
@@ -19,3 +21,24 @@ fetch(API_URL_ALL)
     });
     renderCountriesList(countries);
   });
+
+const filterCountriesAndRenderNewList = () => {
+  const filteredCountries = countries.filter((country) => {
+    return (
+      country.name.toLowerCase().includes(query) &&
+      (!region || country.region === region)
+    );
+  });
+
+  renderCountriesList(filteredCountries);
+};
+
+document.querySelector("#query").addEventListener("input", (e) => {
+  query = e.target.value.toLowerCase().trim();
+  filterCountriesAndRenderNewList();
+});
+
+document.querySelector("#region").addEventListener("change", (e) => {
+  region = e.target.value;
+  filterCountriesAndRenderNewList();
+});

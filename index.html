@@ -20,7 +20,21 @@
       <button><i class="fa-regular fa-moon"></i>Dark Mode</button>
     </div>
   </header>
-  <main id="root"></main>
+  <div class="filters">
+    <input type="text" id="query" placeholder="Search for a country..." />
+    <select name="region" id="region">
+      <option value="">Filter by region</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">Americas</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+    </select>
+  </div>
+  <main id="root">
+  </main>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script type="module" src="functions-DOM.js"></script>
   <script type="module" src="app.js"></script>
 </body>

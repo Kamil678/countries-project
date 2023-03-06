@@ -44,11 +44,56 @@ header button{
     font-size: 18px;
 }
 
-main{
+main, .filters{
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 30px;
+}
+
+main{
     margin-top:30px;
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.filters input, .filters select{
+    border: none;
+    background-color: var(--white);
+    padding: 15px 15px;
+    box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
+    border-radius: 4px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.filters input{
+    background-color: var(--white);
+    width: 450px;
+    padding: 15px 35px;
+    box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
+    background: url(assets/search-outline.svg) no-repeat scroll 10px 16px;
+    background-size: 16px;
+    border-radius: 4px;
+}
+
+.filters input:focus-visible, main .filters select:focus-visible{
+    outline: none;
+}
+
+.filters select{
+appearance: none;
+  width: 200px;
+  background: url(assets/chevron-down-outline.svg) no-repeat scroll 170px 16px;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.filters option{
+    cursor: pointer;
 }
 
 ul{
