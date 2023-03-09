@@ -50,6 +50,7 @@ const createCountriesItemElement = (country) => {
 
 const createCountries = (countries) => {
   const listCountries = document.createElement("ul");
+  listCountries.classList.add("all-countries");
   countries.forEach((country) => {
     listCountries.appendChild(createCountriesItemElement(country));
   });

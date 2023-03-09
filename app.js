@@ -4,7 +4,7 @@ const API_URL_ALL = "https://restcountries.com/v3.1/all";
 
 let countries;
 let query = "";
-let region = "";
+let currentRegion = "";
 
 fetch(API_URL_ALL)
   .then((response) => response.json())
@@ -26,7 +26,7 @@ const filterCountriesAndRenderNewList = () => {
   const filteredCountries = countries.filter((country) => {
     return (
       country.name.toLowerCase().includes(query) &&
-      (!region || country.region === region)
+      (!currentRegion || country.region === currentRegion)
     );
   });
 
@@ -38,7 +38,9 @@ document.querySelector("#query").addEventListener("input", (e) => {
   filterCountriesAndRenderNewList();
 });
 
-document.querySelector("#region").addEventListener("change", (e) => {
-  region = e.target.value;
-  filterCountriesAndRenderNewList();
+document.querySelectorAll(".options li").forEach((region) => {
+  region.addEventListener("click", (e) => {
+    currentRegion = e.target.innerText;
+    filterCountriesAndRenderNewList();
+  });
 });
