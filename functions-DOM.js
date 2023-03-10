@@ -25,13 +25,17 @@ const createFlagElement = (country) => {
 
 const createCountriesItemElement = (country) => {
   const countryElement = document.createElement("li");
+
+  const anachorElement = document.createElement("a");
+  anachorElement.href = `?country=${country.code}`;
+
   const countryElementDiv = document.createElement("div");
   countryElementDiv.classList.add("countries-info");
 
   const countryNameElement = document.createElement("h3");
   countryNameElement.innerText = country.name;
 
-  countryElement.appendChild(createFlagElement(country));
+  anachorElement.appendChild(createFlagElement(country));
   countryElementDiv.appendChild(countryNameElement);
   countryElementDiv.appendChild(
     createCountryInfoElement("Population", country.population)
@@ -43,8 +47,9 @@ const createCountriesItemElement = (country) => {
     createCountryInfoElement("Capital", country.capital)
   );
 
-  countryElement.appendChild(countryElementDiv);
+  anachorElement.appendChild(countryElementDiv);
 
+  countryElement.appendChild(anachorElement);
   return countryElement;
 };
 
@@ -57,8 +62,21 @@ const createCountries = (countries) => {
   return listCountries;
 };
 
+const createDetailElement = (country) => {
+  const detailContainerElement = document.createElement("div");
+  const countryFlagElement = createFlagElement(country);
+  const detailNameElement = document.createElement("h2");
+  detailNameElement.innerText = country.name;
+};
+
 export const renderCountriesList = (countries) => {
   const rootElement = document.querySelector("#root");
   rootElement.innerHTML = "";
   rootElement.appendChild(createCountries(countries));
+};
+
+export const renderCountryDetails = (country) => {
+  const rootElement = document.querySelector("#root");
+  rootElement.innerHTML = "";
+  rootElement.appendChild(createDetailElement(country));
 };

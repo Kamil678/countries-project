@@ -5,7 +5,7 @@ const selectBtnOptionsUl = document.querySelector(".options");
 let regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 let isSelected = false;
 
-const addRegions = (selectedRegion) => {
+const addRegions = () => {
   regions.forEach((region) => {
     let li = `<li onclick="updateRegion(this)">${region}</li>`;
     selectBtnOptionsUl.insertAdjacentHTML("beforeend", li);
