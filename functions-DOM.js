@@ -67,6 +67,61 @@ const createDetailElement = (country) => {
   const countryFlagElement = createFlagElement(country);
   const detailNameElement = document.createElement("h2");
   detailNameElement.innerText = country.name;
+
+  detailContainerElement.appendChild(countryFlagElement);
+  detailContainerElement.appendChild(detailNameElement);
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Native name", country.nativeName)
+  );
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Population", country.population)
+  );
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Region", country.region)
+  );
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Sub Region", country.subregion)
+  );
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Capital", country.capital)
+  );
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Top Level Domain", country.tld)
+  );
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Currencies", country.currencies)
+  );
+  detailContainerElement.appendChild(
+    createCountryInfoElement("Languages", country.languages)
+  );
+
+  return detailContainerElement;
+};
+
+const createDetailButton = (text, link) => {
+  const anachorBtn = document.createElement("a");
+  anachorBtn.innerText = text;
+  anachorBtn.classList.add("detail-button");
+  anachorBtn.href = link;
+
+  return anachorBtn;
+};
+
+const createBorderCountriesContainer = (country) => {
+  const borderCountriesContainer = document.createElement("div");
+
+  const titleElement = document.createElement("p");
+  titleElement.innerText = "Border Countries: ";
+
+  borderCountriesContainer.appendChild(titleElement);
+
+  country.borders.forEach((border) => {
+    borderCountriesContainer.appendChild(
+      createDetailButton(border, `?country=${border}`)
+    );
+  });
+
+  return borderCountriesContainer;
 };
 
 export const renderCountriesList = (countries) => {
@@ -78,5 +133,8 @@ export const renderCountriesList = (countries) => {
 export const renderCountryDetails = (country) => {
   const rootElement = document.querySelector("#root");
   rootElement.innerHTML = "";
+  rootElement.appendChild(createDetailButton("Back", "/"));
   rootElement.appendChild(createDetailElement(country));
+  if (country.borders)
+    rootElement.appendChild(createBorderCountriesContainer(country));
 };
