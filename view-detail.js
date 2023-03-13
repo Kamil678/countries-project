@@ -27,7 +27,7 @@ export const renderViewDetail = () => {
         subregion: country.subregion,
         flagUrl: country.flags.png,
         flagAlt: country.flags.alt,
-        tld: country.tld[0],
+        tld: country.tld ? country.tld[0] : "-",
         currencies: Object.values(country.currencies)
           .map((currency) => currency.name)
           .join(", "),
