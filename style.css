@@ -1,10 +1,12 @@
 :root{
 --dark-blue: hsl(209, 23%, 22%);
 --very-dark-blue-background:hsl(207, 26%, 17%);
---very-dark-blue-text: hsl(200, 15%, 8%);
 --dark-gray: hsl(0, 0%, 52%);
 --very-light-gray:hsl(0, 0%, 98%);
  --white:hsl(0, 0%, 100%);
+ --background-main-section:hsl(0, 0%, 98%);
+ --background: hsl(0, 0%, 100%);
+ --text-color: hsl(200, 15%, 8%);
 }
 
 *{
@@ -15,11 +17,11 @@
 
 body{
     font-family: 'Nunito Sans', sans-serif;
-    background-color: var(--very-light-gray);
+    background-color: var(--background-main-section);
 }
 
 header{
-    background-color: var(--white);
+    background-color: var(--background);
     border-bottom: 1px solid #f1ecec;
 }
 
@@ -67,7 +69,7 @@ main{
 
 .filters input, .filters select{
     border: none;
-    background-color: var(--white);
+    background-color: var(--background);
     padding: 15px 15px;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
     border-radius: 4px;
@@ -76,7 +78,7 @@ main{
 }
 
 .filters input{
-    background-color: var(--white);
+    background-color: var(--background);
     width: 450px;
     padding: 15px 35px;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
@@ -109,7 +111,7 @@ ul.all-countries{
 }
 
 ul.all-countries li{
-    background-color: var(--white);
+    background-color: var(--background);
     border-radius: 10px;
     box-shadow: -1px 13px 24px 0px rgba(206, 206, 206, 1);
     overflow: hidden;
@@ -117,7 +119,7 @@ ul.all-countries li{
 
 ul.all-countries li a{
     text-decoration: none;
-    color: var(--very-dark-blue-text);
+    color: var(--text-color);
 }
 
 li div img{
@@ -158,7 +160,7 @@ li .countries-info h3{
     align-items: center;
     justify-content: space-between;
     border: none;
-    background-color: var(--white);
+    background-color: var(--background);
     padding: 15px 15px;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
     border-radius: 4px;
@@ -182,7 +184,7 @@ li .countries-info h3{
     width: 200px;
     margin-top: 5px;
     padding: 7px 15px;
-    background-color: var(--white);
+    background-color: var(--background);
     border-radius: 4px;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
 }
@@ -212,7 +214,7 @@ li .countries-info h3{
     background-size: 18px;
     font-size: 18px;
     padding: 5px 30px 5px 50px;
-    color: var(--very-dark-blue-text);
+    color: var(--text-color);
     text-decoration: none;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
 }
@@ -291,6 +293,13 @@ li .countries-info h3{
         grid-template-columns: 1fr;
     }
 
+}
+
+/*Dark theme*/
+body.dark{
+    --background-main-section:hsl(207, 26%, 17%);
+    --background: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 0%, 100%);
 }
 
 @media only screen and (max-width:768px) {
