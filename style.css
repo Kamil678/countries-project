@@ -35,15 +35,20 @@ header div{
 }
 
 header h1{
+    color: var(--text-color);
     font-size: 25px;
 }
 
 header button{
     background-color: transparent;
+    color: var(--text-color);
     border: none;
     font-weight: 500;
     cursor: pointer;
     font-size: 18px;
+    background: url(assets/moon-outline.svg) no-repeat scroll 0px 6px;
+    background-size: 18px;
+    padding-left: 25px;
 }
 
 header button ion-icon{
@@ -78,11 +83,12 @@ main{
 }
 
 .filters input{
-    background-color: var(--background);
+    color: var(--text-color);
     width: 450px;
     padding: 15px 35px;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
     background: url(assets/search-outline.svg) no-repeat scroll 10px 16px;
+    background-color: var(--background);
     background-size: 16px;
     border-radius: 4px;
 }
@@ -91,13 +97,15 @@ main{
     outline: none;
 }
 
-.filters select{
-appearance: none;
+/*.filters select{
+  appearance: none;
+  color: var(--text-color);
   width: 200px;
   background: url(assets/chevron-down-outline.svg) no-repeat scroll 170px 16px;
+  background-color: var(--background);
   background-size: 16px;
   cursor: pointer;
-}
+}*/
 
 .filters option{
     cursor: pointer;
@@ -161,6 +169,7 @@ li .countries-info h3{
     justify-content: space-between;
     border: none;
     background-color: var(--background);
+    color: var(--text-color);
     padding: 15px 15px;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
     border-radius: 4px;
@@ -185,6 +194,7 @@ li .countries-info h3{
     margin-top: 5px;
     padding: 7px 15px;
     background-color: var(--background);
+    color: var(--text-color);
     border-radius: 4px;
     box-shadow: 0px 0px 5px 0px rgba(206, 206, 206, 1);
 }
@@ -212,6 +222,7 @@ li .countries-info h3{
     display: inline-block;
     background: url(assets/arrow-back-outline.svg) no-repeat scroll 25px;
     background-size: 18px;
+    background-color: var(--background);
     font-size: 18px;
     padding: 5px 30px 5px 50px;
     color: var(--text-color);
@@ -222,8 +233,8 @@ li .countries-info h3{
 .country-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /*gap: 20px;*/
     margin-top: 50px;
+    color: var(--text-color);
 }
 
 .country-details .country-flag {
@@ -279,9 +290,51 @@ li .countries-info h3{
 
 .country-borders .detail-button{
     background: transparent;
+    background-color: var(--background);
     margin-top: 0;
     padding: 2px 20px;
     font-size: 16px;
+}
+
+/*Dark theme*/
+body.dark{
+    --background-main-section:hsl(207, 26%, 17%);
+    --background: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 0%, 100%);
+}
+
+body.dark ul.all-countries li,body.dark .filters input,body.dark .filters .select-btn,body.dark .content,body.dark .detail-button{
+    box-shadow: none;
+}
+
+body.dark #query::placeholder{
+color: var(--text-color);
+}
+
+body.dark header{
+    border: none;
+}
+
+body.dark header button{
+    background: url(assets/moon-outline-dark.svg) no-repeat scroll 0px 6px;
+    background-size: 18px;
+}
+
+body.dark .filters input{
+    background: url(assets/search-outline-dark.svg) no-repeat scroll 10px 16px;
+    background-size: 16px;
+    background-color: var(--background);
+}
+
+body.dark .detail-button{
+    background: url(assets/arrow-back-outline-dark.svg) no-repeat scroll 25px;
+    background-size: 18px;
+    background-color: var(--background);
+}
+
+body.dark .country-borders .detail-button{
+    background: transparent;
+    background-color: var(--background);
 }
 
 @media only screen and (max-width:1024px) {
@@ -295,20 +348,15 @@ li .countries-info h3{
 
 }
 
-/*Dark theme*/
-body.dark{
-    --background-main-section:hsl(207, 26%, 17%);
-    --background: hsl(209, 23%, 22%);
-    --text-color: hsl(0, 0%, 100%);
-}
-
 @media only screen and (max-width:768px) {
     header h1{
         font-size: 18px;
     }
 
-    header button{
+    body.dark header button, header button{
         font-size: 14px;
+        background-size: 14px;
+        background-position: 0 4px;
     }
 
     .filters{
