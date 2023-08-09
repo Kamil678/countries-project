@@ -42,5 +42,5 @@ export const renderViewDetail = () => {
 };
 
 const backToHomePage = () => {
-  window.location.href = window.location.pathname;
+  window.location.href = window.location.origin + window.location.pathname;
 };
