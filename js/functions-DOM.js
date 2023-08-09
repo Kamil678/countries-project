@@ -159,6 +159,8 @@ export const renderCountriesList = (countries) => {
   rootElement.appendChild(createCountries(countries));
 };
 
+console.log(window.location)
+
 export const renderCountryDetails = (country) => {
   const rootElement = document.querySelector("#root");
   rootElement.innerHTML = "";
