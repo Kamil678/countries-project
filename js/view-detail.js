@@ -42,5 +42,5 @@ export const renderViewDetail = () => {
 };
 
 const backToHomePage = () => {
-  window.location.href = "/countries-project";
+  window.location.href = window.location.pathname;
 };

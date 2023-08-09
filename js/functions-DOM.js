@@ -162,7 +162,7 @@ export const renderCountriesList = (countries) => {
 export const renderCountryDetails = (country) => {
   const rootElement = document.querySelector("#root");
   rootElement.innerHTML = "";
-  rootElement.appendChild(createDetailButton("Back", "/"));
+  rootElement.appendChild(createDetailButton("Back", window.location.pathname));
   rootElement.appendChild(createDetailElement(country));
   /*if (country.borders && country.borders.length > 0) {
     rootElement.appendChild(createBorderCountriesContainer(country));
