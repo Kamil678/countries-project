@@ -66,6 +66,12 @@ main{
     margin: 50px auto;
 }
 
+.no-result{
+    font-size: 22px;
+    color: var(--text-color);
+    text-align: center;
+}
+
 .filters{
     display: flex;
     justify-content: space-between;

@@ -159,6 +159,15 @@ export const renderCountriesList = (countries) => {
   rootElement.appendChild(createCountries(countries));
 };
 
+export const renderNoResult = () => {
+  const rootElement = document.querySelector("#root");
+  rootElement.innerHTML = "";
+  const textNoResult = document.createElement('h2')
+  textNoResult.innerText = 'No mataching result';
+  textNoResult.classList.add('no-result');
+  rootElement.appendChild(textNoResult);
+};
+
 export const renderCountryDetails = (country) => {
   const rootElement = document.querySelector("#root");
   rootElement.innerHTML = "";

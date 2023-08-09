@@ -1,4 +1,7 @@
-import { renderCountriesList } from "./functions-DOM.js";
+import {
+  renderCountriesList,
+  renderNoResult
+} from "./functions-DOM.js";
 
 export const renderViewHomePage = () => {
   const API_URL_ALL = "https://restcountries.com/v3.1/all";
@@ -31,7 +34,11 @@ export const renderViewHomePage = () => {
       );
     });
 
-    renderCountriesList(filteredCountries);
+    if (filteredCountries.length > 0) {
+      renderCountriesList(filteredCountries);
+    } else {
+      renderNoResult()
+    }
   };
 
   document.querySelector("#query").addEventListener("input", (e) => {
