@@ -1,4 +1,6 @@
-import { renderCountryDetails } from "./functions-DOM.js";
+import {
+  renderCountryDetails
+} from "./functions-DOM.js";
 
 export const renderViewDetail = () => {
   const searchParams = new URLSearchParams(window.location.search);
@@ -40,5 +42,5 @@ export const renderViewDetail = () => {
 };
 
 const backToHomePage = () => {
-  window.location.href = "/";
+  window.location.href = "/countries-project";
 };
