@@ -23,7 +23,6 @@ export const renderViewHomePage = () => {
           flagAlt: country.flags.alt,
         };
       });
-      console.log(countries);
       renderCountriesList(countries);
     });
 
